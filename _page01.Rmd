@@ -1,0 +1,104 @@
+Iris Dataset
+=====================================
+<style>
+  .navbar-inverse{
+    background-color: rgb(227, 54, 39);
+    border-color: rgb(190, 25, 78);
+  }
+  .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: rgb(128, 41, 19);
+  }
+  .image-container{
+    background-position: "none",
+  }
+  .imggg{
+    float: left;
+    padding-right: 50px;
+  }
+</style>
+
+Column{.tabset}
+-----------------------------------------------------------------------
+
+### About Dataset
+<center><h2><b>Iris Flower Data Set</b></h2></center>
+***
+<br><br>
+The <em><b> Iris flower data set </b></em> or <i><b> Fisher's Iris data set </b></i> is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis. It is sometimes called <i><b> Anderson's Iris data set </b></i> because Edgar Anderson collected the data to quantify the morphologic variation of Iris flowers of three related species.Two of the three species were collected in the Gaspé Peninsula "all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus".
+
+The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor).<b><em> Four features were measured from each sample: the length and the width of the sepals and petals </em></b>, in centimeters. Based on the combination of these four features, Fisher developed a linear discriminant model to distinguish the species from each other.
+
+<div class = "imggg">
+<h3>Setosa Species:</h3> 
+<img src = "https://upload.wikimedia.org/wikipedia/commons/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg", style= "'background-position': none; width: 350px;")</img>
+</div>
+
+<div class = "imggg">
+<h3>Versicolor Species:</h3>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg", style= "'background-position': none; width: 350px; height: 467px;")</img>
+</div>
+
+<div class = "imggg">
+<h3>Virginica Species:</h3> 
+<img src = "https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg", style= "'background-position': none; width: 350px; height:467px;")</img>
+</div>
+
+### Histogram
+
+```{r}
+# include the module
+library(ggplot2)
+source("gernalise_hist.R")
+
+# call the module
+i <- datasets::iris
+GeneralHistogramUI("Species", i, "Iris")
+callModule(GeneralHistogram, "Species", i, "Iris",5)
+```
+
+
+### Line Graph
+  
+```{r}
+source("gernalise_lineplot.R")
+
+GeneralLinePlotUI("Species", i, "Iris")
+callModule(GeneralLinePlot, "Species", i, "Iris",5)
+
+#shinyApp(
+#  ui = fluidPage(
+#        sidebarLayout(
+#          sidebarPanel(
+#            textInput("char_value_1", label = "First String", value = ""),
+#            textInput("char_value_2", label = "Second String", value = "")
+#          ),
+#          mainPanel(
+#            h3(textOutput("result"))
+#          )
+#        )
+#      ),
+#  server = function(input, output) {
+#     output$result<- renderText({ stringr::str_c(input$char_value_1, input$char_value_2, sep = " ")})
+#  }
+#)
+```
+
+### Scatter Plot
+
+```{r}
+# include the module
+source("gernalise_scatterplot.R")
+
+GeneralScatterPlotUI("Species", i, "Iris")
+callModule(GeneralScatterPlot, "Species", i, "Iris",5)
+```
+  
+
+### Boxplot
+```{r}
+  #print("Hello World")
+source("gernalise_boxplot.R")
+
+GeneralLinePlotUI("Species", i, "Iris")
+callModule(GeneralLinePlot, "Species", i, "Iris",5)
+```

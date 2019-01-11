@@ -1,0 +1,12 @@
+---
+title: "Graphs for different Datasets"
+output: flexdashboard::flex_dashboard
+runtime: shiny
+---
+
+```{r child= "_page01.Rmd"}
+```
+
+```{r child= "_page02.Rmd"}
+```
+

@@ -1,0 +1,67 @@
+Mtcars Dataset
+=====================================
+  
+Column{.tabset}
+-----------------------------------------------------------------------
+  
+### About Dataset
+<center><h2><b>Mtcars Data Set</b></h2></center>
+***
+<br><br>
+The <em><b>mtcars </b></em>data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
+
+A data frame with 32 observations on <b>11 (numeric) variables</b>. <br><br>
+<li> mpg	Miles/(US) gallon </li><br>
+<li> cyl	Number of cylinders </li><br>
+<li> disp	Displacement (cu.in.) </li><br>
+<li> hp	Gross horsepower </li><br>
+<li> drat	Rear axle ratio </li><br>
+<li> wt	Weight (1000 lbs) </li><br>
+<li> qsec	1/4 mile time </li><br>
+<li> vs	Engine (0 = V-shaped, 1 = straight) </li><br>
+<li> am	Transmission (0 = automatic, 1 = manual) </li><br>
+<li> gear	Number of forward gears </li><br>
+<li> carb	Number of carburetors </li>
+
+### Histogram
+  
+```{r}
+# include the module
+library(ggplot2)
+source("gernalise_hist.R")
+
+# call the module
+d <- datasets::mtcars
+GeneralHistogramUI("Mtcars", d, "Mtcars")
+callModule(GeneralHistogram, "Mtcars", d, "Mtcars",5)
+```
+
+
+### Line Graph
+
+```{r}
+source("gernalise_lineplot.R")
+
+GeneralLinePlotUI("Mtcars", d, "Mtcars")
+callModule(GeneralLinePlot, "Mtcars", d, "Mtcars",6)
+```
+
+### Scatter Plot
+
+```{r}
+# include the module
+source("gernalise_scatterplot.R")
+
+GeneralScatterPlotUI("Mtcars", d, "Mtcars")
+callModule(GeneralScatterPlot, "Mtcars", d, "Mtcars",6)
+```
+
+
+### Boxplot
+```{r}
+#print("Hello World")
+source("gernalise_boxplot.R")
+
+GeneralLinePlotUI("Mtcars", d, "Mtcars")
+callModule(GeneralLinePlot, "Mtcars", d, "Mtcars",6)
+```
